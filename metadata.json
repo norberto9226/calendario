@@ -1,0 +1,6 @@
+{
+  "name": "Calendario de Otoño 2026",
+  "description": "Calendario interactivo a partir de septiembre 2026 con registro de eventos, galería de imágenes y cálida paleta de otoño.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

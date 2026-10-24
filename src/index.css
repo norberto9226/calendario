@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
+}
+
+/* Season themes CSS variables */
+:root, [data-season="otono"] {
+  --theme-bg: #FAF6F0;
+  --theme-surface: #FFFFFF;
+  --theme-card: #FDFBF8;
+  --theme-header: #F7EFE6;
+  --theme-border: #E8DCCF;
+  --theme-border-strong: #DFCFC1;
+  --theme-primary: #A8421E;
+  --theme-primary-hover: #8F3516;
+  --theme-primary-light: #FDF2ED;
+  --theme-accent: #D97706;
+  --theme-text: #382417;
+  --theme-muted: #8C6D58;
+  --theme-pill-bg: #FDF6EE;
+  --theme-pill-border: #EED7C5;
+  --theme-pill-text: #4A2D1A;
+}
+
+[data-season="primavera"] {
+  --theme-bg: #FAF5F7;
+  --theme-surface: #FFFFFF;
+  --theme-card: #FCF8FA;
+  --theme-header: #F6EBF0;
+  --theme-border: #EED6E0;
+  --theme-border-strong: #E2C2D0;
+  --theme-primary: #C44D76;
+  --theme-primary-hover: #A8385E;
+  --theme-primary-light: #FDF0F4;
+  --theme-accent: #3F8A56;
+  --theme-text: #381C28;
+  --theme-muted: #8C5B72;
+  --theme-pill-bg: #FDF2F6;
+  --theme-pill-border: #F2D0DC;
+  --theme-pill-text: #522035;
+}
+
+[data-season="verano"] {
+  --theme-bg: #FCFAF2;
+  --theme-surface: #FFFFFF;
+  --theme-card: #FDFCF7;
+  --theme-header: #F6F0E0;
+  --theme-border: #EAE0C8;
+  --theme-border-strong: #DECFAe;
+  --theme-primary: #C96E14;
+  --theme-primary-hover: #AD590A;
+  --theme-primary-light: #FEF6EC;
+  --theme-accent: #0E7490;
+  --theme-text: #382410;
+  --theme-muted: #876B4B;
+  --theme-pill-bg: #FEF7EC;
+  --theme-pill-border: #F6DEBE;
+  --theme-pill-text: #54300D;
+}
+
+[data-season="invierno"] {
+  --theme-bg: #F2F6FA;
+  --theme-surface: #FFFFFF;
+  --theme-card: #F7FAFC;
+  --theme-header: #E4ECF5;
+  --theme-border: #D2DFEC;
+  --theme-border-strong: #BED0E2;
+  --theme-primary: #1E649E;
+  --theme-primary-hover: #154E7D;
+  --theme-primary-light: #EEF5FC;
+  --theme-accent: #2563EB;
+  --theme-text: #182736;
+  --theme-muted: #57718A;
+  --theme-pill-bg: #EFF5FB;
+  --theme-pill-border: #CDE0F2;
+  --theme-pill-text: #183B5C;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom scrollbars matching active season */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-border-strong);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-primary);
+}
+
+@keyframes leafFall {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(50vh) translateX(45px) rotate(160deg);
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(105vh) translateX(-35px) rotate(340deg);
+    opacity: 0;
+  }
+}
+
+.animate-leaf-fall {
+  animation-name: leafFall;
+}
